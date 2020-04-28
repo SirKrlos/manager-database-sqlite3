@@ -8,3 +8,9 @@ Gerenciador de Banco de Dados sqlite3
 __author__ = "JoseCarlosSkar"
 __version__ = "0.1.0-alpha"
 
+
+class ManagerDatabase ( object ) :
+	"""Gerenciador de Banco de Dados sqlite3"""
+
+	pass
+
