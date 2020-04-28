@@ -9,6 +9,9 @@ __author__ = "JoseCarlosSkar"
 __version__ = "0.1.0-alpha"
 
 
+import sqlite3
+
+
 class ManagerDatabase ( object ) :
 	"""Gerenciador de Banco de Dados sqlite3"""
 
