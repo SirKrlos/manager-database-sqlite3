@@ -12,5 +12,11 @@ __version__ = "0.1.0-alpha"
 class ManagerDatabase ( object ) :
 	"""Gerenciador de Banco de Dados sqlite3"""
 
-	pass
+	def __init__ (
+		self,
+		path_db: str = None
+	) -> None :
+		"""Construtor"""
+
+		self.__path_db = str ( path_db ).strip ()
 
