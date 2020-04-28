@@ -23,5 +23,16 @@ class ManagerDatabase ( object ) :
 	) -> None :
 		"""Construtor"""
 
-		self.__path_db = str ( path_db ).strip ()
+		if isinstance ( path_db, str ):
+			self.__path_db = str ( path_db ).strip ()
+
+		elif path_db == None:
+			raise ( exceptions.NotDefinePathDB (
+				"O caminho para o banco de dados não foi informado."
+			) )
+
+		elif isinstance ( path_db, str ) == False:
+			raise ( exceptions.ParamTypeError (
+				"O parâmetro 'path_db' deve ser do tipo 'str'."
+			) )
 
