@@ -44,3 +44,9 @@ class ManagerDatabase ( object ) :
 				"O parâmetro 'path_db' deve ser do tipo 'str'."
 			) )
 
+	def Disconnect (
+		self
+	) -> None :
+
+		pass
+
