@@ -63,3 +63,13 @@ class ManagerDatabase ( object ) :
 		if self.__connnected == True:
 			self.__connnected = False
 
+	def IsConnected (
+		self
+	) -> bool :
+		"""Verificar se o banco de dados está conectado"""
+
+		if self.__connnected == True:
+			return True
+		elif self.__connnected == False:
+			return False
+
