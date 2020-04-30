@@ -23,6 +23,8 @@ class ManagerDatabase ( object ) :
 	) -> None :
 		"""Construtor"""
 
+		self.__connnected = False
+
 		if path_db is not None:
 			self.Connect ( path_db = path_db )
 
@@ -31,8 +33,16 @@ class ManagerDatabase ( object ) :
 		path_db: str = None
 	) -> None :
 
+		if self.__connnected == True:
+			return False
+
 		if isinstance ( path_db, str ):
 			self.__path_db = str ( path_db ).strip ()
+			try:
+				with sqlite3.connect ( self.__path_db ): pass
+				return True
+			except:
+				return False
 
 		elif path_db == None:
 			raise ( exceptions.NotDefinePathDB (
@@ -47,6 +57,8 @@ class ManagerDatabase ( object ) :
 	def Disconnect (
 		self
 	) -> None :
+		"""Disconectar banco de dados"""
 
-		pass
+		if self.__connnected == True:
+			self.__connnected = False
 
