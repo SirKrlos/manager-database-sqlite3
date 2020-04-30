@@ -32,6 +32,7 @@ class ManagerDatabase ( object ) :
 		self,
 		path_db: str = None
 	) -> None :
+		"""Conectar banco de dados"""
 
 		if self.__connnected == True:
 			return False
