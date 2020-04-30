@@ -23,6 +23,14 @@ class ManagerDatabase ( object ) :
 	) -> None :
 		"""Construtor"""
 
+		if path_db is not None:
+			self.Connect ( path_db = path_db )
+
+	def Connect (
+		self,
+		path_db: str = None
+	) -> None :
+
 		if isinstance ( path_db, str ):
 			self.__path_db = str ( path_db ).strip ()
 
