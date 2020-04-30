@@ -41,6 +41,7 @@ class ManagerDatabase ( object ) :
 			self.__path_db = str ( path_db ).strip ()
 			try:
 				with sqlite3.connect ( self.__path_db ): pass
+				self.__connnected = True
 				return True
 			except:
 				return False
