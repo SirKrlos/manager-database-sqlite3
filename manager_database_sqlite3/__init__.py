@@ -12,6 +12,7 @@ __version__ = "0.1.0-alpha"
 import sqlite3
 from . import keys
 from . import exceptions
+from . import sqlformat
 
 
 class ManagerDatabase ( object ) :
