@@ -75,3 +75,32 @@ class ManagerDatabase ( object ) :
 		elif self.__connnected == False:
 			return False
 
+	def __run (
+		self,
+		SQL: str = None,
+		dicter: bool = False
+	) -> None or list or dict :
+		"""Executar string sql"""
+
+		result = None
+
+		try:
+			with sqlite3.connect ( self.__path_db ) as conn:
+				if dicter == True:
+					conn.row_factory = lambda c, r: dict ( zip ( [ col [ 0 ] for col in c.description ], r ) )
+
+				cs = conn.cursor ()
+				cs.execute ( SQL )
+				conn.commit ()
+				result = cs.fetchall ()
+
+		except:
+			raise ( exceptions.ErrorInSystem (
+				"Ocorreu um erro no sistema, por favor informe em 'https://github.com/JoseCarlosSkar/manager-database-sqlite3', se possível com o log."
+			) )
+
+		if result == [] and dicter == True:
+			return {}
+		else:
+			return result
+
