@@ -104,3 +104,15 @@ class ManagerDatabase ( object ) :
 		else:
 			return result
 
+	def ListTables (
+		self
+	) -> list :
+		"""Lista todas as tabelas"""
+
+		SQL = sqlformat.list_tables ()
+
+		result = self.__run ( SQL = SQL, dicter = True )
+		tables = [ d [ "name" ] for d in result ]
+
+		return tables
+
