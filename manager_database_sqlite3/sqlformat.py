@@ -15,3 +15,19 @@ def list_tables () -> str :
 
 	return sql
 
+def create_table (
+	name_table: str = None,
+	keysvalues: dict = None
+) -> str :
+	"""Retorna sql 'CreateTable'"""
+
+	sql = "CREATE TABLE"
+	keysvalues_str = factory.keysvaluesToListStr (
+		keysvalues = keysvalues
+	)
+
+	sql += " " + str ( f"`{name_table}`" ).strip ()
+	sql += " " + str ( f"({keysvalues_str})" ).strip ()
+
+	return sql
+
