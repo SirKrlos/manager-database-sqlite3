@@ -31,3 +31,13 @@ def create_table (
 
 	return sql
 
+def delete_table (
+    name_table: str = None
+) -> str :
+    """Retorna sql 'DeleteTable'"""
+
+    sql = "DROP TABLE"
+    sql += " " + str ( f"`{name_table}`" )
+
+    return sql
+
