@@ -5,6 +5,8 @@ Strings sql
 
 """
 
+from manager_database_sqlite3 import factory
+
 
 def list_tables () -> str :
 	"""Retorna sql 'ListTables'"""
