@@ -116,3 +116,17 @@ class ManagerDatabase ( object ) :
 
 		return tables
 
+	def IsExistTable (
+		self,
+		name_table: str = None,
+	) -> bool :
+		"""Verificar se existe tabela"""
+
+		if isinstance ( name_table, str ) == True:
+			name_table = str ( name_table ).strip ()
+
+		if name_table in self.ListTables ():
+			return True
+		else:
+			return False
+
