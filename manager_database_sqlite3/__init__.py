@@ -107,7 +107,7 @@ class ManagerDatabase ( object ) :
 	def ListTables (
 		self
 	) -> list :
-		"""Lista todas as tabelas"""
+		"""Listar todas as tabelas"""
 
 		SQL = sqlformat.list_tables ()
 
