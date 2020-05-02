@@ -25,3 +25,8 @@ class ErrorOnCreateTable ( Exception ) :
 
 	pass
 
+
+class ErrorOnDeleteTable ( Exception ) :
+
+	pass
+
