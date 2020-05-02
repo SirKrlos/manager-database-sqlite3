@@ -20,3 +20,8 @@ class ErrorInSystem ( Exception ) :
 
 	pass
 
+
+class ErrorOnCreateTable ( Exception ) :
+
+	pass
+
