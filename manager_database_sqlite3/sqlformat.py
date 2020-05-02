@@ -7,9 +7,9 @@ Strings sql
 
 
 def list_tables () -> str :
-    """Retorna sql 'ListTables'"""
+	"""Retorna sql 'ListTables'"""
 
-    sql = "SELECT name FROM sqlite_master WHERE type = 'table'"
+	sql = "SELECT name FROM sqlite_master WHERE type = 'table'"
 
-    return sql
+	return sql
 
