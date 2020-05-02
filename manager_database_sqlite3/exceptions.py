@@ -8,14 +8,14 @@ Classes para tratamento de erros
 
 class NotDefinePathDB ( Exception ) :
 
-    pass
+	pass
 
 
 class ParamTypeError ( Exception ) :
 
-    pass
+	pass
 
 class ErrorInSystem ( Exception ) :
 
-    pass
+	pass
 
