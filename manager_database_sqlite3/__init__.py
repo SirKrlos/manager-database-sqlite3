@@ -130,3 +130,32 @@ class ManagerDatabase ( object ) :
 		else:
 			return False
 
+	def CreateTable (
+		self,
+		name_table: str = None,
+		keysvalues: dict = None,
+		ifnoexist: bool = False
+	) -> None :
+		"""Criar tabela"""
+
+		if isinstance ( name_table, str ) == True:
+			name_table = str ( name_table ).strip ()
+
+		isexisttable = self.IsExistTable ( name_table = name_table )
+
+		if ifnoexist == True and isexisttable == True:
+			return None
+
+		elif ifnoexist == False and isexisttable == True:
+			raise ( exceptions.ErrorOnCreateTable (
+				f"Erro ao tentar criar tabela `{name_table}`, pois ja existe esta tabela."
+			) )
+
+		else:
+			SQL = sqlformat.create_table (
+				name_table = name_table,
+				keysvalues = keysvalues
+			)
+
+			self.__run ( SQL = SQL, dicter = False )
+
