@@ -188,3 +188,5 @@ db.Disconnect ()
 
 ```
 Criará uma tabela chamada 'Table_test' no banco de dados 'testdb1.db'.
+
+---
