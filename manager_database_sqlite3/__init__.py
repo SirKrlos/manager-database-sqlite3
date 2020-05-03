@@ -224,5 +224,5 @@ class ManagerDatabase ( object ) :
 				new_name_table = new_name_table
 			)
 
-			self.__run ( SQL = SQL )
+			self.__run ( SQL = SQL, dicter = False )
 
