@@ -1,6 +1,6 @@
 
 ## Geral
-- [ ] Conectar
+- [x] Conectar
 - [ ] Desconectar
 - [ ] Verificar se estar conectado
 
