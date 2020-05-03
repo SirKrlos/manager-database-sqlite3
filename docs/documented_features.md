@@ -6,7 +6,7 @@
 
 ## Tabela
 - [x] Listar tabelas
-- [ ] Criar tabela
+- [x] Criar tabela
 - [ ] Deletar Tabela
 - [ ] Renomear Tabela
 - [ ] Limpar tabela
