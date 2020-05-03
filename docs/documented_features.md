@@ -1,23 +1,23 @@
 
 ## Geral
-- [x] Conectar
-- [x] Desconectar
-- [x] Verificar se estar conectado
+- [x] Conectar Banco de Dados
+- [x] Desconectar Banco de Dados
+- [x] Verificar se estar conectado um Banco de Dados
 
 ## Tabela
-- [x] Listar tabelas
-- [x] Criar tabela
+- [x] Listar Tabelas
+- [x] Criar Tabela
 - [ ] Deletar Tabela
 - [ ] Renomear Tabela
-- [ ] Limpar tabela
-- [ ] Verificar se existe tabela
+- [ ] Limpar Tabela
+- [ ] Verificar se existe Tabela
 
 ## Registro
-- [ ] Listar registros
-- [ ] Inserir registros
-- [ ] Deletar registros
+- [ ] Listar Registros
+- [ ] Inserir Registros
+- [ ] Deletar Registros
 
 ## Coluna
-- [ ] Listar colunas
-- [ ] Criar colunas
-- [ ] Deletar colunas
+- [ ] Listar Colunas
+- [ ] Criar Colunas
+- [ ] Deletar Colunas
