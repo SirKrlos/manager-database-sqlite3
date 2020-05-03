@@ -115,6 +115,33 @@ Verificará se um banco de dados chamado 'testdb1.db' está conectado.
 
 ---
 
+
+## Listar Tabelas
+
+- **mds3.ManagerDatabase.ListTables** Lista tabelas.
+
+<table style="border:1px solid black;margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+</table>
+
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+
+tables = db.ListTables ()
+
+db.Disconnect ()
+```
+Listará as tabela do banco de dados 'testdb1.db'.
+
+---
+
 ## Criar Tabela
 
 - **mds3.ManagerDatabase.CreateTable** Cria tabela.
