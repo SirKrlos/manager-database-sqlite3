@@ -70,3 +70,25 @@ db.Connect (
 Conectará um banco de dados chamado 'testdb1.db'.
 
 ---
+
+## Desconectar um Banco de Dados Sqlite3
+
+- **mds3.ManagerDatabase.Disconnect** Desconecta um banco de dados sqlite3.
+
+<table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+</table>
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+db.Disconnect ()
+```
+Desconectará um banco de dados chamado 'testdb1.db'.
+
+---
