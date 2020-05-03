@@ -5,7 +5,7 @@
 - [x] Verificar se estar conectado
 
 ## Tabela
-- [ ] Listar tabelas
+- [x] Listar tabelas
 - [ ] Criar tabela
 - [ ] Deletar Tabela
 - [ ] Renomear Tabela
