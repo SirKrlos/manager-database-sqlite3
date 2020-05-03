@@ -92,3 +92,25 @@ db.Disconnect ()
 Desconectará um banco de dados chamado 'testdb1.db'.
 
 ---
+
+## Verificar se um Banco de Dados Sqlite3 está conectado
+
+- **mds3.ManagerDatabase.IsConnected** Verifica se um banco de dados sqlite3 está conectado.
+
+<table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+</table>
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+db.IsConnected ()
+```
+Verificará se um banco de dados chamado 'testdb1.db' está conectado.
+
+---
