@@ -30,3 +30,8 @@ class ErrorOnDeleteTable ( Exception ) :
 
 	pass
 
+
+class ErrorOnRenameTable ( Exception ) :
+
+	pass
+
