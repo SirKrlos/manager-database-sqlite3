@@ -186,3 +186,43 @@ class ManagerDatabase ( object ) :
 
 			self.__run ( SQL = SQL, dicter = False )
 
+	def RenameTable (
+		self,
+		name_table: str = None,
+		new_name_table: str = None,
+		ifexist_origin_table: bool = False,
+		ifnoexist_new_table: bool = False
+	) -> None :
+		"""Renomear Tabela"""
+
+		if isinstance ( name_table, str ) == True:
+			name_table = str ( name_table ).strip ()
+
+		if isinstance ( new_name_table, str ) == True:
+			new_name_table = str ( new_name_table ).strip ()
+
+		if ifexist_origin_table == True and self.IsExistTable ( name_table = name_table ) == False:
+			return None
+
+		if ifnoexist_new_table == True and self.IsExistTable ( name_table = new_name_table ) == True:
+			return None
+
+		if ifexist_origin_table == False and self.IsExistTable ( name_table = name_table ) == False:
+			raise ( exceptions.ErrorOnRenameTable (
+				f"A tabela original `{name_table}` não existe."
+			) )
+
+		if ifnoexist_new_table == False and self.IsExistTable ( name_table = new_name_table ) == True:
+			raise ( exceptions.ErrorOnRenameTable (
+				f"A nova tabela `{new_name_table}` já existe."
+			) )
+
+		else:
+
+			SQL = sqlformat.rename_table (
+				name_table = name_table,
+				new_name_table = new_name_table
+			)
+
+			self.__run ( SQL = SQL )
+
