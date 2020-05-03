@@ -1,7 +1,7 @@
 
 ## Geral
 - [x] Conectar
-- [ ] Desconectar
+- [x] Desconectar
 - [ ] Verificar se estar conectado
 
 ## Tabela
