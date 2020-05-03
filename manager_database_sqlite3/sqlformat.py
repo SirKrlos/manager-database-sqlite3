@@ -41,3 +41,16 @@ def delete_table (
 
 	return sql
 
+def rename_table (
+	name_table: str = None,
+	new_name_table: str = None
+) -> str :
+	"""Retorna sql 'RenameTable'"""
+
+	sql = "ALTER TABLE"
+	sql += " " + f"`{name_table}`"
+	sql += " " + "RENAME TO"
+	sql += " " + f"`{new_name_table}`"
+
+	return sql
+
