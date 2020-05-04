@@ -54,3 +54,19 @@ def rename_table (
 
 	return sql
 
+def get_content_table (
+	name_table: str = None,
+	keysvalues: dict = None
+) -> str :
+	"""Retorna sql 'GetContentTable'"""
+
+	sql = "SELECT * FROM"
+	sql += " " + f"`{name_table}`"
+
+	if keysvalues:
+		keysvaluesDictStr = factory.keysvaluesToDictStr ( keysvalues = keysvalues, sep = " AND " )
+		sql += " " + "WHERE"
+		sql += " " + f"{keysvaluesDictStr}"
+
+	return sql
+
