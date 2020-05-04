@@ -229,3 +229,54 @@ db.Disconnect ()
 Deletará uma tabela chamada 'Table_test' no banco de dados 'testdb1.db'.
 
 ---
+
+## Renomear Tabela
+
+- **mds3.ManagerDatabase.RenameTable** Renomeia tabela.
+
+<table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+	<tr>
+		<td>name_table</td>
+		<td>Nome da tabela original.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>new_name_table</td>
+		<td>Novo nome para a tabela.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>ifexist_origin_table</td>
+		<td>Se True a tabela original só será renomeda se o mesmo existir.</td>
+		<td>False</td>
+	</tr>
+	<tr>
+		<td>ifnoexist_new_table</td>
+		<td>Se True a tabela original só será renomeda se não existir uma tabela com o novo nome.</td>
+		<td>False</td>
+	</tr>
+</table>
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+
+db.RenameTable (
+	name_table = "Table_test",
+	new_name_table = "Table_test2"
+	ifexist_origin_table = True,
+	ifnoexist_new_table = False
+)
+
+db.Disconnect ()
+
+```
+Renomeará uma tabela chamada 'Table_test' para 'Table_test2' no banco de dados 'testdb1.db'.
+
+---
