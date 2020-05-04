@@ -35,3 +35,8 @@ class ErrorOnRenameTable ( Exception ) :
 
 	pass
 
+
+class ErrorOnGetContentTable ( Exception ) :
+
+	pass
+
