@@ -280,3 +280,36 @@ db.Disconnect ()
 Renomeará uma tabela chamada 'Table_test' para 'Table_test2' no banco de dados 'testdb1.db'.
 
 ---
+
+## Verificar se existe Tabela
+
+- **mds3.ManagerDatabase.IsExistTable** Verifica se existe tabela.
+
+<table style="border:1px solid black; margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+	<tr>
+		<td>name_table</td>
+		<td>Nome da tabela.</td>
+		<td>None</td>
+	</tr>
+</table>
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+
+isexist = db.IsExistTable (
+	name_table = "Table_test"
+)
+
+db.Disconnect ()
+
+```
+Verificará se uma tabela chamada 'Table_test' existe no banco de dados 'testdb1.db'.
+
+---
