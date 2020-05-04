@@ -190,3 +190,42 @@ db.Disconnect ()
 Criará uma tabela chamada 'Table_test' no banco de dados 'testdb1.db'.
 
 ---
+
+## Deletar Tabela
+
+- **mds3.ManagerDatabase.DeleteTable** Deleta tabela.
+
+<table style="border:1px solid black;margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+	<tr>
+		<td>name_table</td>
+		<td>Nome da tabela.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>ifexist</td>
+		<td>Se True a tabela só será deletada se o mesmo existir.<br>Se False e a tabela não existir, será gerado um erro.</td>
+		<td>False</td>
+	</tr>
+</table>
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+
+db.DeleteTable (
+	name_table = "Table_test",
+	ifexist = True
+)
+
+db.Disconnect ()
+
+```
+Deletará uma tabela chamada 'Table_test' no banco de dados 'testdb1.db'.
+
+---
