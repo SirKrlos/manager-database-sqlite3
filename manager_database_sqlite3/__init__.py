@@ -226,3 +226,32 @@ class ManagerDatabase ( object ) :
 
 			self.__run ( SQL = SQL, dicter = False )
 
+	def GetContentTable (
+		self,
+		name_table: str = None,
+		keysvalues: dict = None,
+		dicter: bool = False,
+		ifexist: bool = False
+	) -> None or list or dict :
+		"""Listar conteúdo"""
+
+		if isinstance ( name_table, str ) == True:
+			name_table = str ( name_table ).strip ()
+
+		if ifexist == True and self.IsExistTable ( name_table = name_table ) == False:
+			return None
+
+		if ifexist == False and self.IsExistTable ( name_table = name_table ) == False:
+			raise ( exceptions.ErrorOnGetContentTable (
+				f"A tabela `{name_table}` não existe."
+			) )
+
+		else:
+
+			SQL = sqlformat.get_content_table (
+				name_table = name_table,
+				keysvalues = keysvalues
+			)
+
+			return self.__run ( SQL = SQL, dicter = dicter )
+
