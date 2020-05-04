@@ -8,7 +8,7 @@
 - [x] Listar Tabelas
 - [x] Criar Tabela
 - [x] Deletar Tabela
-- [ ] Renomear Tabela
+- [x] Renomear Tabela
 - [ ] Limpar Tabela
 - [ ] Verificar se existe Tabela
 
