@@ -10,7 +10,7 @@
 - [x] Deletar Tabela
 - [x] Renomear Tabela
 - [ ] Limpar Tabela
-- [ ] Verificar se existe Tabela
+- [x] Verificar se existe Tabela
 
 ## Registro
 - [ ] Listar Registros
