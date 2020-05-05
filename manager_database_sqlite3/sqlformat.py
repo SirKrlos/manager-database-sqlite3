@@ -70,3 +70,31 @@ def get_content_table (
 
 	return sql
 
+def add_content_table (
+	name_table: str = None,
+	keysvalues: dict = None,
+) :
+	"""Retorna sql 'AddContentTable'"""
+
+	keys = []
+	values = []
+
+	for k,v in keysvalues.items ():
+		keys.append ( k )
+		values.append ( v )
+
+	keys = factory.listToStrSqliteColumn (
+		list_columns = keys
+	)
+	values = factory.listToStrSqliteColumnValue (
+		list_columns_values = values
+	)
+
+	sql = "INSERT INTO"
+
+	sql += " " + f"`{name_table}`"
+	sql += " " + f"({keys})"
+	sql += " " + f"VALUES({values})"
+
+	return sql
+
