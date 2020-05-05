@@ -381,3 +381,52 @@ db.Disconnect ()
 Listará todos os registros com a coluna 'name' igual a 'myuser' da tabela chamada 'Table_test' do banco de dados 'testdb1.db'.
 
 ---
+
+## Adicionar Registros
+
+- **mds3.ManagerDatabase.AddContentTable** Adiciona registros.
+
+<table style="border:1px solid black;margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+	<tr>
+		<td>name_table</td>
+		<td>Nome da tabela.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>keysvalues</td>
+		<td>Nome das colunas e seus tipos.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>ifexist</td>
+		<td>Se True só será adicionado registros se a tabela existir.<br>Se False e a tabela não existir, será gerado um erro.</td>
+		<td>False</td>
+	</tr>
+</table>
+
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+
+db.AddContentTable (
+	name_table = "Table_test",
+	keysvalues = dict (
+		id = 1,
+		name = "myuser"
+	),
+	ifexist = True
+)
+
+db.Disconnect ()
+
+```
+Adicionará um novo registro em uma tabela chamada 'Table_test' no banco de dados 'testdb1.db'.
+
+---
