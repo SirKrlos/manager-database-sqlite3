@@ -14,7 +14,7 @@
 
 ## Registro
 - [x] Listar Registros
-- [ ] Inserir Registros
+- [x] Inserir Registros
 - [ ] Deletar Registros
 
 ## Coluna
