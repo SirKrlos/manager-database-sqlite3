@@ -2,15 +2,15 @@
 
 
 def keysvaluesToListStr (
-	keysvalues: dict = None
+	keysvalues: dict = None,
+	sep: str = ","
 ) -> str :
 	"""Keysvalues to list str 'key value, key2 value2'"""
 
 	result = ""
 
 	for k,v in keysvalues.items ():
-		if result != "":
-			result += ", "
+		if result != "": result += f"{sep}"
 		result += str ( f"`{k}`" ) + " " + str ( v )
 
 	return result
@@ -21,12 +21,13 @@ def keysvaluesToDictStr (
 ) -> str :
 	"""Keysvalues to dict str 'key = value, key2 = value2'"""
 
-	sets = ""
-	for k, v in keysvalues.items():
-		if sets != "": sets += f"{sep}"
-		sets += str(k) if type(k) == int else "`"+str(k)+"`"
-		sets += "="
-		sets += str(v) if type(v) == int else "'"+str(v)+"'"
+	result = ""
 
-	return sets
+	for k,v in keysvalues.items ():
+		if result != "": result += f"{sep}"
+		result += str(k) if type(k) == int else "`"+str(k)+"`"
+		result += "="
+		result += str(v) if type(v) == int else "'"+str(v)+"'"
+
+	return result
 
