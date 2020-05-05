@@ -40,3 +40,8 @@ class ErrorOnGetContentTable ( Exception ) :
 
 	pass
 
+
+class ErrorOnAddContentTable ( Exception ) :
+
+	pass
+
