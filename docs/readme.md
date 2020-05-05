@@ -313,3 +313,71 @@ db.Disconnect ()
 Verificará se uma tabela chamada 'Table_test' existe no banco de dados 'testdb1.db'.
 
 ---
+
+## Listar Registros
+
+- **mds3.ManagerDatabase.GetContentTable** Lista os registros.
+
+<table style="border:1px solid black;margin-left:auto; margin-right:auto;">
+	<tr>
+		<th>Parámetro</th>
+		<th>Descrição</th>
+		<th>Valor padrão</th>
+	</tr>
+	<tr>
+		<td>name_table</td>
+		<td>Nome da tabela.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>keysvalues</td>
+		<td>Usado para retornar valores específicos.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>dicter</td>
+		<td>Se True será retornado um dicionário com o nome da coluna e seu valor.<br>Se False será retornada uma lista só com os valores.</td>
+		<td>False</td>
+	</tr>
+	<tr>
+		<td>ifexist</td>
+		<td>Se True só será retornado os registros se a tabela existir.<br>Se False e a tabela não existir, será gerado um erro.</td>
+		<td>False</td>
+	</tr>
+</table>
+
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+
+content = db.GetContentTable (
+	name_table = "Table_test",
+	dicter=True,
+	ifexist=True
+)
+
+db.Disconnect ()
+```
+Listará todos os registros da tabela chamada 'Table_test' do banco de dados 'testdb1.db'.
+
+```python
+db = mds3.ManagerDatabase (
+	path_db = "databases/testdb1.db"
+)
+
+content = db.GetContentTable (
+	name_table = "Table_test",
+	keysvalues = {
+		name: "myuser"
+	},
+	dicter=True,
+	ifexist=True
+)
+
+db.Disconnect ()
+```
+Listará todos os registros com a coluna 'name' igual a 'myuser' da tabela chamada 'Table_test' do banco de dados 'testdb1.db'.
+
+---
