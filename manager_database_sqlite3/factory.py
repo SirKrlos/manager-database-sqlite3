@@ -44,3 +44,16 @@ def listToStrSqliteColumn (
 
 	return result
 
+def listToStrSqliteColumnValue (
+	list_columns_values: list = None,
+	sep: str = ","
+) -> str :
+	"""list_to_str"""
+
+	result = ""
+	for i in list_columns_values:
+		if result != "": result += f"{sep}"
+		result += f"{i}" if type ( i ) == int else f"'{i}'"
+
+	return result
+
