@@ -13,7 +13,7 @@
 - [x] Verificar se existe Tabela
 
 ## Registro
-- [ ] Listar Registros
+- [x] Listar Registros
 - [ ] Inserir Registros
 - [ ] Deletar Registros
 
