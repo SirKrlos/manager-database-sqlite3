@@ -255,3 +255,36 @@ class ManagerDatabase ( object ) :
 
 			return self.__run ( SQL = SQL, dicter = dicter )
 
+	def AddContentTable (
+		self,
+		name_table: str = None,
+		keysvalues: dict = None,
+		ifexist: bool = False
+	) -> None :
+		"""Inserir registros"""
+
+		if isinstance ( name_table, str ) == True:
+			name_table = str ( name_table ).strip ()
+
+		if ifexist == True and self.IsExistTable ( name_table = name_table ) == False:
+			return None
+
+		if ifexist == False and self.IsExistTable ( name_table = name_table ) == False:
+			raise ( exceptions.ErrorOnAddContentTable (
+				f"A tabela `{name_table}` não existe."
+			) )
+
+		if keysvalues == None:
+			raise ( exceptions.ErrorOnAddContentTable (
+				f"Deve informar os dados para o(s) registro(s)."
+			) )
+
+		else:
+
+			SQL = sqlformat.add_content_table (
+				name_table = name_table,
+				keysvalues = keysvalues
+			);print(SQL)
+
+			self.__run ( SQL = SQL, dicter = False )
+
