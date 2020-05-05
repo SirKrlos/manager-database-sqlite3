@@ -31,3 +31,16 @@ def keysvaluesToDictStr (
 
 	return result
 
+def listToStrSqliteColumn (
+	list_columns: list = None,
+	sep: str = ","
+) -> str :
+	"""list_to_str"""
+
+	result = ""
+	for i in list_columns:
+		if result != "": result += f"{sep}"
+		result += f"`{i}`"
+
+	return result
+
