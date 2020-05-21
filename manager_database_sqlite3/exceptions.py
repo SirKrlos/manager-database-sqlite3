@@ -45,3 +45,8 @@ class ErrorOnAddContentTable ( Exception ) :
 
 	pass
 
+
+class ErrorOnClearTable ( Exception ) :
+
+	pass
+
