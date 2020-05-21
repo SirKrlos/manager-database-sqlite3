@@ -288,3 +288,30 @@ class ManagerDatabase ( object ) :
 
 			self.__run ( SQL = SQL, dicter = False )
 
+	def ClearTable (
+		self,
+		name_table: str = None,
+		ifexist: bool = False
+	) -> None :
+		"""Limpar tabela"""
+
+		if isinstance ( name_table, str ) == True:
+			name_table = str ( name_table ).strip ()
+
+		isexisttable = self.IsExistTable ( name_table = name_table )
+
+		if ifexist == True and isexisttable == False:
+			return None
+
+		elif ifexist == False and isexisttable == False:
+			raise ( exceptions.ErrorOnClearTable (
+				f"Erro ao tentar limpar tabela `{name_table}`, pois não existe esta tabela."
+			) )
+
+		else:
+			SQL = sqlformat.clear_table (
+				name_table = name_table
+			)
+
+			self.__run ( SQL = SQL, dicter = False )
+
