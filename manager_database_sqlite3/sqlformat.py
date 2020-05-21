@@ -98,3 +98,13 @@ def add_content_table (
 
 	return sql
 
+def clear_table (
+	name_table: str = None
+) -> str :
+	"""Retorna sql 'ClearTable'"""
+
+	sql = "DELETE FROM"
+	sql += " " + f"`{name_table}`"
+
+	return sql
+
